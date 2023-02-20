@@ -11,10 +11,9 @@
 
 int main(void)
 {
-	int array_var[26];
 	int x;
 
-	for (int x = 'A'; x <= 'Z' ; x++)
+	for (x = 'A'; x <= 'Z' ; x++)
 	{
 		int lower_x = tolower(x);
 
