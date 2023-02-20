@@ -1,9 +1,9 @@
 #include<stdio.h>
 
 /**
- *  * main - Print message with printf
- *   * Return: 0
- *    */
+	 main - Print message with printf
+	 Return: 0
+*/
 
 int main(void)
 {
