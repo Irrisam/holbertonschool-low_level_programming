@@ -8,12 +8,13 @@
 
 int main(void)
 {
-	int chiffre = 0;
+	int chiffre = 48;
+	int newline = 10;
 
-	for (; chiffre < 10; chiffre++)
+	for (; chiffre < 58; chiffre++)
 		{
-		printf("%d", chiffre);
+		putchar(chiffre);
 		}
-putchar('\n');
+putchar(newline);
 return (0);
 }
