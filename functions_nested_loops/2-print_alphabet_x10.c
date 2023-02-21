@@ -16,8 +16,8 @@ int x = 0;
 		for (; i <= 122; i++)
 		{
 			_putchar(i);
-			_putchar('\n');
 		}
+	putchar_('\n')	
 	x++;
 	}
 }
