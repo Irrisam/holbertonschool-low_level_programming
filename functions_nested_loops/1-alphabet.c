@@ -1,8 +1,10 @@
 #include "main.h"
 
 void print_alphabet(void)
-
-
+/**
+ * main - prints alphabet
+ * Return: 0
+*/
 {
 	int i = 97;
 
