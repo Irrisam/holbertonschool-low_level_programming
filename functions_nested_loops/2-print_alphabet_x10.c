@@ -17,7 +17,7 @@ int x = 0;
 		{
 			_putchar(i);
 		}
-	putchar_('\n')	
+	_putchar('\n');
 	x++;
 	}
 }
