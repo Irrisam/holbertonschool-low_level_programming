@@ -9,7 +9,7 @@ void print_alphabet_x10(void)
 {
 int x = 0;
 
-	while (x < 11)
+	while (x < 10)
 	{
 		int i = 97;
 
