@@ -14,7 +14,8 @@ void print_numbers(void)
 	for (; chiffre < 58; chiffre++)
 	{
 		putchar(chiffre);
-	}
+	
 		putchar(newline);
 	return (0);
 	}
+}
