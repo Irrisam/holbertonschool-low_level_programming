@@ -3,7 +3,7 @@
  *  * _isupper - checks for caps
  *   * @c: input for function
  *    * Return: 0
-*    */
+*/
 
 int _isupper(int c)
 
