@@ -1,30 +1,35 @@
 #include "main.h"
 
+/**
+ *  * times_table - Prints up to 9 starts from 0
+*/
 void times_table(void)
 {
-	int multipliant = 1;
-	int result = 0;
+	int x, y;
 
-	while (multipliant < 10)
+	for (x = 0; x < 10; x++)
 	{
-		int multiplied = 1;
-		_putchar(10);
-		_putchar(48);
-		_putchar(44);
-		_putchar(32);
-		
-		while (multiplied < 10)
+		for (y  = 0; y < 10; y++)
 		{
-			result = (multipliant * multiplied);
-			if (result >= 10)
+			if (y == 0)
 			{
-				_putchar(result / 10 + '0');
-				_putchar(result % 10 + '0');
-			}	
-			_putchar(result + '0');
-			
-			multiplied++;
+				_putchar('0');
+			}
+			else if (x * y < 10)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(x * y + '0');
+			}
+			else
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar((x * y) / 10 + '0');
+				_putchar((x * y) % 10 + '0');
+			}
 		}
-		multipliant++;
+		_putchar('\n');
 	}
 }
