@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
- *
+ * puts2 - prints 1 out 2 chars
+ * @str: string to be splitted
  */
 
 void puts2(char *str)
@@ -13,13 +14,10 @@ void puts2(char *str)
 	{
 		a++;
 	}
-	
 	while (compteur <= a)
 	{
 		_putchar(str[compteur]);
-		
-		compteur+=2;
+		compteur += 2;
 	}
 	_putchar(10);
 }
-
