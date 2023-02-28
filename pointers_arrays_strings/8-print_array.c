@@ -12,7 +12,7 @@ void print_array(int *a, int n)
 
 	for (compteur = 0; compteur < n; compteur++)
 	{
-		printf("%d",a[compteur]);
+		printf("%d", a[compteur]);
 		if (compteur != n - 1)
 		{
 		printf(", ");
