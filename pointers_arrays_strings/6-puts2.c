@@ -14,9 +14,13 @@ void puts2(char *str)
 	{
 		a++;
 	}
+
+	a = a-1;
+
 	while (compteur <= a)
 	{
 		_putchar(str[compteur]);
 		compteur += 2;
 	}
+	_putchar(10);
 }
