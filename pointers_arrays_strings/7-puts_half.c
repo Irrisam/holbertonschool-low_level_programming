@@ -27,5 +27,4 @@ void puts_half(char *str)
 		_putchar(str[value]);
 		value++;
 	}
-	_putchar(10);
 }
