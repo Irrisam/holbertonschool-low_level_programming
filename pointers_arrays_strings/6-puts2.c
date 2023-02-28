@@ -15,7 +15,7 @@ void puts2(char *str)
 		a++;
 	}
 
-	a = a-1;
+	a = a - 1;
 
 	while (compteur <= a)
 	{
