@@ -27,4 +27,5 @@ void puts_half(char *str)
 		_putchar(str[value]);
 		value++;
 	}
+	printf("\n");
 }
