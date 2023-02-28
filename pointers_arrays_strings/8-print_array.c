@@ -1,5 +1,4 @@
 #include "main.h"
-#include "_putchar.c"
 /**
  *  * print_array - print n number os int in given stray of ints
  *@a: given steray of ints
