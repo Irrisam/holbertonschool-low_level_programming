@@ -13,10 +13,15 @@ char *cap_string(char *str)
 	while (str[compteur] != '\0')
 	{
 		compteur++;
-			if (str[compteur] >= 97 && str[compteur] <= 122)
-			{
-				str[compteur] = str[compteur] - 32;
-			}
+
+		if(str[compteur] < 97 && str[compteur] > 122)
+		{
+			compteur++;
+		}
+		else
+		{	
+			str[compteur] = str[compteur] - 32;
+		}
 	}
 	return (str);
 }
