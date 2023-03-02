@@ -8,4 +8,6 @@
 
 int _atoi(char *s)
 {
+	s = "yes";
+	return(0);
 }
