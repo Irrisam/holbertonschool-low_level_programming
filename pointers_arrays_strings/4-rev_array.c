@@ -1,16 +1,18 @@
 #include "main.h"
 
 /**
- *  * rev_string - reverses a string and stocks it in the same value
- *   * @s: string to be reversed
- *    */
+*  * reverse_array - reverses an array of int and stocks it in the
+*  same variable
+*   * @a: array to be reversed
+*   *@n: given size of array
+*/
 
 void reverse_array(int *a, int n)
 {
 	int compteur = 0;
 	int temp = 0;
-	
-	n = n-1;
+
+	n = n - 1;
 	while (compteur < n)
 	{
 		temp = a[compteur];
