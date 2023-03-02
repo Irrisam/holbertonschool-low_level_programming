@@ -18,8 +18,8 @@ char *_strncat(char *dest, char *src, int n)
 	}
 	while (compteursrc < n && src[compteursrc] != '\0')
 	{
-		compteursrc++;
 		dest[compteurdest + compteursrc] = src[compteurdest];
+		compteursrc++;
 	}
 	dest[compteursrc + compteurdest] = '\0';
 	return (dest);
