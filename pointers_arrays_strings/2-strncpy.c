@@ -11,18 +11,16 @@
 char *_strncpy(char *dest, char *src, int n)
 {
 	int compteursrc = 0;
-	int compteurdest = 0;
 
-	while (src[compteursrc] != '\0')
+	while (compteursrc < n && src[compteursrc] != '\0')
 	{
+		dest[compteursrc] = src[compteursrc];
 		compteursrc++;
 	}
-	while (compteurdest < n && dest[compteurdest] != '\0')
+	while (compteursrc < n)
 	{
-		dest[compteurdest] = src[compteurdest];
-		compteurdest++;
+		dest[compteursrc++] = '\0';
 	}
-	dest[compteursrc + compteurdest] = '\0';
 	return (dest);
 }
 
