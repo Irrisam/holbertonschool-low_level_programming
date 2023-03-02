@@ -1,7 +1,9 @@
 #include "main.h"
 
 /**
- *
+ * string_toupper - caps lowercase letters *str
+ * @str: given string to be put to caps
+ * Return: capslocked string
  */
 
 char *string_toupper(char *str)
@@ -14,7 +16,7 @@ char *string_toupper(char *str)
 
 		if (str[compteur] >= 97 && str[compteur] <= 122)
 		{
-		str[compteur] = str[compteur] - 32 ;
+		str[compteur] = str[compteur] - 32;
 		}
 	}
 return (str);
