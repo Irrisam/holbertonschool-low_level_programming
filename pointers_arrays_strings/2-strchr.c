@@ -9,19 +9,20 @@
 
 char *_strchr(char *s, char c)
 {
-	if (c == '\0')
+	if (c != '\0')
 	{
-	return (0);
-	}
-	for (; *s != '\0' ; s++)
-	{
-		if (*s  == c)
+		return (0);
+
+		for (; *s != '\0' ; s++)
 		{
-			return (s);
-		}
-		if (*s == c)
-		{
-			return (0);
+			if (*s  == c)
+			{
+				return (s);
+			}
+			if (*s == c)
+			{
+				return (0);
+			}
 		}
 	}
 	return (0);
