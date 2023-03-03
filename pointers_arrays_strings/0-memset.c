@@ -6,7 +6,7 @@
  * @s:memory pointed at
  * @b:constant byte value
  * @n:number of bytes to be filled
- * Return: 0
+ * Return: location of filled area
 */
 
 char *_memset(char *s, char b, unsigned int n)
@@ -17,5 +17,5 @@ char *_memset(char *s, char b, unsigned int n)
 	{
 	*(s + compteur) = b;
 	}
-	return (0);
+	return (*s);
 }
