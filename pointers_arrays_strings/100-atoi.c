@@ -8,6 +8,11 @@
 
 int _atoi(char *s)
 {
-	s = "yes";
-	return(0);
+	int compteur = 0;
+
+	while (s[compteur] != '\0')
+	{
+	compteur++;
+	}
+	return (0);
 }
