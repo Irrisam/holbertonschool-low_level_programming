@@ -4,6 +4,7 @@
  * main - pronts number of arguments
  * @argc: count of args
  * @argv: array of pointers of argc
+ * Return: 0
 */
 
 int main(int argc, char **argv)
