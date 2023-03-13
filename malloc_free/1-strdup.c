@@ -22,7 +22,12 @@ char *_strdup(char *str)
 	{
 	}
 
-	array = malloc(compteur * sizeof(char));
+	array = malloc(compteur * sizeof(char) + 1);
+
+	if (array == 0)
+	{
+		return (0);
+	}
 
 	for (; compteur2 < compteur; compteur2++)
 	{
