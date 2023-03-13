@@ -18,6 +18,14 @@ char *str_concat(char *s1, char *s2)
 	int i = 0;
 	int j = 0;
 
+	if (s1 == NULL)
+	{
+		s1 = "";
+	}
+	if (s2 == NULL)
+	{
+		s2 = "";
+	}
 	for (; s1[compteur1] != '\0'; compteur1++)
 	{
 	}
@@ -25,6 +33,10 @@ char *str_concat(char *s1, char *s2)
 	{
 	}
 	array = malloc((compteur1 + compteur2) * sizeof(char) + 1);
+	if (array == NULL)
+	{
+		return (0);
+	}
 	for (; i < compteur1 ; i++)
 	{
 		array[i] = s1[i];
