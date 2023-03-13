@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 /**
@@ -13,10 +14,14 @@ char *create_array(unsigned int size, char c)
 {
 	unsigned int i = 0;
 	char *array = malloc(size * sizeof(char));
-
-	if (array == NULL)
+	if (size == 0)
 	{
 		return (0);
+	}
+	if (array == NULL)
+	{
+		printf("failed to allocate memory\n");
+		return (NULL);
 	}
 	for (; i < size; i++)
 	{
