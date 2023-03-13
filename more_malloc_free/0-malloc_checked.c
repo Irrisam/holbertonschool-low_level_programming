@@ -4,7 +4,7 @@
 #include <limits.h>
 
 /**
- *  * malloc_checked - checkign if malloc is valid 
+ *  * malloc_checked - checkign if malloc is valid
  *   *@b: size of malloc to be made
  *    * Return: pointer tot new string
  */
