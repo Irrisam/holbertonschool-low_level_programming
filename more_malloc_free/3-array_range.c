@@ -9,7 +9,7 @@
  *    * @max: max value of ints
  *     *
  *      * Return: Nothing.
- *       */
+*/
 int *array_range(int min, int max)
 {
 	int i = 0;
@@ -19,7 +19,7 @@ int *array_range(int min, int max)
 	{
 		return (0);
 	}
-	array = malloc(max * sizeof(int) + 1);
+	array = malloc(max * sizeof(int) + 4);
 
 	if (array == NULL)
 	{
