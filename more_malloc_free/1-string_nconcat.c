@@ -8,17 +8,15 @@
  *   *@s2: second string
  *   *@n: max size for s2
  *    * Return: concatenated string
-*/
+ */
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int compteur1 = 0;
-	int compteur2 = 0;
-	int i = 0;
-	int j = 0;
-	int nfake = 0;
+	unsigned int compteur1 = 0;
+	unsigned int compteur2 = 0;
+	unsigned int i = 0;
+	unsigned int j = 0;
 	char *array = "";
-
-	nfake = n;
 
 	for (; s1[compteur1] != '\0'; compteur1++)
 	{
@@ -34,18 +32,24 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		s2 = "";
 	}
-
-	array = malloc((s1[compteur1] + s2[compteur2]) + 2);
-
+	array = malloc((compteur1 + compteur2 * 1) + 2);
+	if (array == NULL)
+	{
+		return (0);
+	}
 	for (; i < compteur1; i++)
 	{
 		array[i] = s1[i];
 	}
-	for (; j < nfake; i++, j++)
+	if (compteur2 >= n)
+	{
+		compteur2 = n;
+	}
+	for (; j < compteur2; i++, j++)
 	{
 		array[i] = s2[j];
 	}
-	array[i + 1] = '\0';
+	array[i] = '\0';
 
-return (array);
+	return (array);
 }
