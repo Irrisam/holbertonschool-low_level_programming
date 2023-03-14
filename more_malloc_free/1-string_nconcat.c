@@ -18,12 +18,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int j = 0;
 	char *array = "";
 
-	for (; s1[compteur1] != '\0'; compteur1++)
-	{
-	}
-	for (; s2[compteur2] != '\0'; compteur2++)
-	{
-	}
 	if (s1 == 0)
 	{
 		s1 = "";
@@ -31,6 +25,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == 0)
 	{
 		s2 = "";
+	}
+	for (; s1[compteur1] != '\0'; compteur1++)
+	{
+	}
+	for (; s2[compteur2] != '\0'; compteur2++)
+	{
 	}
 	array = malloc((compteur1 + compteur2 * 1) + 2);
 	if (array == NULL)
