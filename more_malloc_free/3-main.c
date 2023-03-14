@@ -1,7 +1,8 @@
-#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+int *array_range(int, int);
 
 /**
  *  * simple_print_buffer - prints buffer in hexa
@@ -32,7 +33,7 @@ void simple_print_buffer(int *buffer, unsigned int size)
 }
 
 /**
- *  * main - check the code
+ *  * main - check the code .
  *   *
  *    * Return: Always 0.
  *     */
@@ -40,8 +41,13 @@ int main(void)
 {
 	int *a;
 
-	a = array_range(0, 10);
-	simple_print_buffer(a, 11);
+	a = array_range(1024, 2048);
+	if (a == NULL)
+	{
+		printf("Failed\n");
+		return (1);
+	}
+	simple_print_buffer(a, 1024);
 	free(a);
 	return (0);
 }
