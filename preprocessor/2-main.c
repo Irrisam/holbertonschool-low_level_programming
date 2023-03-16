@@ -1,12 +1,13 @@
-#ifndef
-
-#define print
 #include <stdio.h>
-int main(int argc, char *argv[])
+
+/**
+ *  * main - Entry point
+ *   * Return: Always 0.
+ *    */
+
+int main(void)
 {
-	argv[1] = print;
-	printf("%s\n",argv[0]);
-	return 0;
+	printf("%s\n", __FILE__);
+	return (0);
 }
 
-#endif
