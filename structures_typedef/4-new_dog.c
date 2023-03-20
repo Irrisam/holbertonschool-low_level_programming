@@ -3,8 +3,11 @@
 #include "dog.h"
 
 /**
- *
- *
+ *new_dog - creates a new doggo 
+ *@name: doggo's name
+ *@age: doggo's age
+ *@owner: doggo's owner
+ *Return: bite
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
@@ -12,7 +15,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t* bite = NULL;
 	int compteur = 0;
 	bite = malloc(sizeof(dog_t));
-
+	if (bite == NULL)
+		return(NULL);
 	for (;compteur < name[compteur]; compteur++)
 	{
 	}
