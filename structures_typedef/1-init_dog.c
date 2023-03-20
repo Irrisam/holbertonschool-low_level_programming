@@ -2,7 +2,11 @@
 #include "dog.h"
 
 /**
- *
+ *init_dog - struct
+ *@name: name
+ *@age: age
+ *@owner: owner
+ *@d: stocks type
  *
  */
 
