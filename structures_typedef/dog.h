@@ -2,19 +2,17 @@
 #define DOG_H_
 
 /**
- * main - defines doggo
- * Return: NULL
+ *struct dog - doggo
+ *@name: name of doggo
+ *@age: age of doggo
+ *@owner: owner of doggo
  */
 
-int main(void)
+struct dog
 {
-	struct dog
-	{
-		char * = name;
-		float = age;
-		char * =  owner;
-	}
-	return (0);
-}
+	char *name;
+	float age;
+	char *owner;
+};
 
 #endif
