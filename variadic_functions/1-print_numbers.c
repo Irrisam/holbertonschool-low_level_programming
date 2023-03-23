@@ -1,7 +1,7 @@
 #include "variadic_functions.h"
 #include <stdio.h>
 /**
- *print_number - pritns given numbers
+ *print_numbers - pritns given numbers
  *@separator: splits values
  *@n: list to search through
  */
