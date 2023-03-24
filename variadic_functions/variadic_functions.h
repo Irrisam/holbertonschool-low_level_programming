@@ -1,13 +1,22 @@
-#ifndef VARIADIC_FUNCTIONS
-#define VARIADIC_FUNCTIONS
+#ifndef VARIADIC_FUNCTIONS_H
+#define VARIADIC_FUNCTIONS_H
 
-#include <stdlib.h>
-#include <stdlib.h>
+#include <stdio.h>
 #include <stdarg.h>
+#include <stdlib.h>
 
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
-
+/**
+ * struct select - points to where args
+ * @select: strcutrue
+ * @f: pointer
+*/
+typedef struct select
+{
+	char *select;
+	void (*f)(va_list);
+} type_select;
 #endif
