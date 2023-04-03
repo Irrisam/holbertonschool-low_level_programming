@@ -6,7 +6,7 @@
  * print_list - prints every container of h*
  * @h: given linked list
  * Return: count of printed arguments
-*/
+ */
 
 size_t print_list(const list_t *h)
 {
@@ -15,7 +15,6 @@ size_t print_list(const list_t *h)
 	int count = 0;
 
 	head = (list_t *) h;
-
 	while (head != NULL)
 	{
 		if (head->str == NULL)
