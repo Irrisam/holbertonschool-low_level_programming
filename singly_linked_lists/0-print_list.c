@@ -2,10 +2,16 @@
 #include <stdlib.h>
 #include "lists.h"
 
+/**
+ * print_list - prints every container of h*
+ * @h: given linked list
+ * Return: count of printed arguments
+*/
+
 size_t print_list(const list_t *h)
 {
 
-	list_t * head = NULL;
+	list_t *head = NULL;
 	int count = 0;
 
 	head = (list_t *) h;
@@ -25,5 +31,5 @@ size_t print_list(const list_t *h)
 			head = head->next;
 		}
 	}
-	return(count);
+	return (count);
 }
