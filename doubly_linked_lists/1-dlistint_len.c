@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * print_dlistint - prints list given
+ * dlistint_len - prints list given
  * @h: given pointer to list
  * Return: count of nodes
  */
