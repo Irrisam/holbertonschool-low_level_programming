@@ -8,7 +8,7 @@
  *   * @str: str to put in data
  *    * @head: linked list
  *     * Return: pointer to resulting
- *      */
+*/
 
 list_t *add_node_end(list_t **head, const char *str)
 {
