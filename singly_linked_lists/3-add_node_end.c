@@ -10,7 +10,7 @@
  *     * Return: pointer to resulting
 */
 
-list_t *add_node_end(list_t **head, const char *str)
+dlistint_t *add_dnodeint(dlistint_t **head, const int n);
 {
 	list_t *new_node;
 	list_t *tmp;
