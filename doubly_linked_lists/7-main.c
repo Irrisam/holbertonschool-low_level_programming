@@ -2,6 +2,9 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include "lists.h"
+
+size_t _print_dlistint_backward(const dlistint_t *h);
+
 /**
  * _create_dlist - Create a list
  *
@@ -66,8 +69,8 @@ int main(void)
 	dlistint_t *node;
 	size_t n;
 
-	head = _create_dlist(1, 9);
-	node = insert_dnodeint_at_index(&head, 10, 98);
+	head = _create_dlist(2, -12, 6);
+	node = insert_dnodeint_at_index(&head, 1, 98);
 	if (node)
 		printf("-> %d\n", node->n);
 	else
