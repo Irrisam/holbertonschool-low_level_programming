@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 	(void)argc;
 	if (argv[3])
 	{
-		fprintf(stderr, "Usage: cp file_from file_to");
+		fprintf(stderr, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
     if (argv[2] == NULL)
@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 		printf("Error: Can't write to %s\n", argv[1]);
 		exit(99);
 	}
-	fptrdest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
+	fptrdest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | 0331);
 	if (fptrdest < 0)
 	{
 		fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
@@ -43,6 +43,11 @@ int main(int argc, char **argv)
 	}
 	while ((bytes_read = read(fptrsrc, buffer, 1024)) > 0)
 	{
+        if (read(fptrdest, buffer, bytes_read) != bytes_read)
+		{
+			fprintf(stderr, "Error: Can't read from file %s\n", argv[2]);
+			exit(98);
+		}
 		if (write(fptrdest, buffer, bytes_read) != bytes_read)
 		{
 			fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
