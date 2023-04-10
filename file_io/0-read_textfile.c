@@ -9,24 +9,22 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-    FILE * fptr;
-    int count = 0;
-    char * line;
-    int i = 0;
+    FILE * fptr = NULL;
+    size_t count = 0;
+    char cstock = ' ';
 
     fptr = fopen(filename, "r");
-    line = malloc(sizeof(char) * letters);
-    while (!feof(fptr))
-    {
-        fgets(line, letters, fptr); 
-        while(line[i] != '\0')
+
+        while ((cstock = fgetc(fptr)) != EOF)
         {
-            count += putchar(line[i]);
-            i++;
+            putchar(cstock);
+            count++;
+            if(count >= letters)
+            {
+                break;
+            }
         }
-        i = 0;
-    }
     fclose(fptr);
 
-    return(count);
+    return (count);
 }
