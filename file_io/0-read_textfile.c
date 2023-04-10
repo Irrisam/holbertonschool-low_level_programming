@@ -14,7 +14,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
     char cstock = ' ';
 
     fptr = fopen(filename, "r");
-
+    if (letters == 0 || filename == NULL || fptr == NULL)
+        {
+            return(count);
+        }
+   
         while ((cstock = fgetc(fptr)) != EOF)
         {
             putchar(cstock);
