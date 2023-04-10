@@ -14,9 +14,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char cstock = ' ';
 
 	fptr = fopen(filename, "r");
-	if (letters == 0 || filename == NULL || fptr == NULL)
+	if (letters == 0)
 	{
 		fclose(fptr);
+		return (count);
+	}
+	if (filename == NULL || fptr == NULL)
+	{
 		return (count);
 	}
 
