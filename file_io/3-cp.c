@@ -4,7 +4,7 @@
  * main - copies content from one file to another
  * @argc: number of input elements
  * @argv: elements form stdin stored in arrays
- * Return: 1 on success
+ * Return: 0 on success
  */
 
 int main(int argc, char **argv)
@@ -46,7 +46,6 @@ int main(int argc, char **argv)
 		}
 	}
 	close(fptrsrc);
-    
 	close(fptrdest);
-	return (1);
+	return (0);
 }
