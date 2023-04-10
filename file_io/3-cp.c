@@ -17,12 +17,12 @@ int main(int argc, char **argv)
 	(void)argc;
 	if (argv[3])
 	{
-		printf("Error: Can't read from file %s\n", argv[1]);
+		fprintf(stderr, "Error: Can't read from file %s\n", argv[1]);
 		exit(97);
 	}
 	if (access(argv[1], R_OK) != 0)
 	{
-		printf("Error: Can't read from file %s\n", argv[1]);
+		fprintf(stderr, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	fptrsrc = open(argv[1], O_RDONLY);
@@ -34,18 +34,19 @@ int main(int argc, char **argv)
 	fptrdest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
 	if (fptrdest < 0)
 	{
-		printf("Error: Can't open destination file %s\n", argv[2]);
+		fprintf(stderr, "Error: Can't open destination file %s\n", argv[2]);
 		exit(99);
 	}
 	while ((bytes_read = read(fptrsrc, buffer, 1024)) > 0)
 	{
 		if (write(fptrdest, buffer, bytes_read) != bytes_read)
 		{
-			printf("Error: Can't write to destination file %s\n", argv[2]);
-			exit(101);
+			fprintf(stderr, "Error: Can't write to destination file %s\n", argv[2]);
+			exit(99);
 		}
 	}
 	close(fptrsrc);
+    
 	close(fptrdest);
 	return (1);
 }
