@@ -17,9 +17,13 @@ int main(int argc, char **argv)
 	(void)argc;
 	if (argv[3])
 	{
-		fprintf(stderr, "Error: Can't read from file %s\n", argv[1]);
+		fprintf(stderr, "Usage: cp file_from file_to");
 		exit(97);
 	}
+    if (argv[2] == NULL)
+    {
+        fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
+    }
 	if (access(argv[1], R_OK) != 0)
 	{
 		fprintf(stderr, "Error: Can't read from file %s\n", argv[1]);
@@ -34,14 +38,14 @@ int main(int argc, char **argv)
 	fptrdest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
 	if (fptrdest < 0)
 	{
-		fprintf(stderr, "Error: Can't open destination file %s\n", argv[2]);
+		fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	while ((bytes_read = read(fptrsrc, buffer, 1024)) > 0)
 	{
 		if (write(fptrdest, buffer, bytes_read) != bytes_read)
 		{
-			fprintf(stderr, "Error: Can't write to destination file %s\n", argv[2]);
+			fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
 	}
