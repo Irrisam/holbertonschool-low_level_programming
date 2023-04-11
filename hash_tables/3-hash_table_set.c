@@ -26,7 +26,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		new->value = strdup(value);
 		new->key = strdup(key);
-		printf("%s is value %s is key\n", new->value, new->key);
 	}
 	else
 	{
@@ -37,7 +36,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		new->value = strdup(value);
 		new->next = ht->array[stock];
-		printf("%s is value %s is key (collided)\n", new->value, new->key);
 	}
 	return (1);
 }
