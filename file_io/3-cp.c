@@ -56,7 +56,7 @@ int main(int argc, char **argv)
 	}
 	if (close(fptrdest) == -1)
 	{
-		fprintf(stderr, "Error, can't close fd %d\n", fptrsrc);
+		fprintf(stderr, "Error: can't close fd %d\n", fptrsrc);
 		exit(100);
 	}
 	return (0);
