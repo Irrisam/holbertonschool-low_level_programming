@@ -13,7 +13,6 @@ int main(int argc, char **argv)
 	int fptrdest = 0;
 	char buffer[1024];
 	ssize_t bytes_read;
-	int check = 0;
 
 	(void)argc;
 	if (argv[3])
