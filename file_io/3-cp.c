@@ -36,14 +36,14 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 	fptrdest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	if (fptrdest == -1)
+	if (fptrdest < 0)
 	{
 		fprintf(stderr, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	while ((bytes_read = read(fptrsrc, buffer, 1024)) > 0)
 	{
-		if (write(fptrdest, buffer, bytes_read) != bytes_read )
+		if (write(fptrdest, buffer, bytes_read) != bytes_read || fptrdest < 0)
 		{
 			fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
