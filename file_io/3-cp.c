@@ -13,6 +13,7 @@ int main(int argc, char **argv)
 	int fptrdest = 0;
 	char buffer[1024];
 	ssize_t bytes_read;
+	int check = 0;
 
 	(void)argc;
 	if (argv[3])
@@ -20,10 +21,10 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-    if (argv[2] == NULL)
-    {
-        fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
-    }
+	if (argv[2] == NULL)
+	{
+		fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
+	}
 	if (access(argv[1], R_OK) != 0)
 	{
 		fprintf(stderr, "Error: Can't read from file %s\n", argv[1]);
@@ -35,7 +36,7 @@ int main(int argc, char **argv)
 		printf("Error: Can't write to %s\n", argv[1]);
 		exit(99);
 	}
-	fptrdest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | 0331);
+	fptrdest = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fptrdest < 0)
 	{
 		fprintf(stderr, "Error: Can't write to %s\n", argv[2]);
@@ -49,7 +50,15 @@ int main(int argc, char **argv)
 			exit(99);
 		}
 	}
-	close(fptrsrc);
-	close(fptrdest);
+	if (close(fptrsrc) == -1)
+	{
+		fprintf(stderr, "Error, can't close fd %d\n", fptrsrc);
+		exit(100);
+	}
+	if (close(fptrdest) == -1)
+	{
+		fprintf(stderr, "Error, can't close fd %d\n", fptrsrc);
+		exit(100);
+	}
 	return (0);
 }
