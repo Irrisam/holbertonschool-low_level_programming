@@ -32,6 +32,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
+		while (ht->array[stock] != NULL)
+		{
+			if (strcmp(ht->array[stock]->key, key) == 0)
+			{
+				ht->array[stock]->value = strdup(value);
+				return(1);
+			}
+			ht->array[stock] = ht->array[stock]->next;
+		}
 		new = malloc(sizeof(hash_node_t) * 1);
 		if (new == NULL)
 		{
@@ -41,6 +50,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		new->key = strdup(key);
 		new->next = ht->array[stock];
 		ht->array[stock] = new;
+
 	}
 	return (1);
 }
