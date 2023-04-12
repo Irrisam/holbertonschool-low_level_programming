@@ -8,8 +8,8 @@
 void hash_table_print(const hash_table_t *ht)
 {
 	unsigned long int counter = 0;
+    int shamecounter = 0;
 	char *coma = "";
-	hash_node_t *buffer = NULL;
 	hash_node_t *tmp = NULL;
 
 	if (ht == NULL)
@@ -25,24 +25,34 @@ void hash_table_print(const hash_table_t *ht)
 		}
 		else
 		{
-			buffer = ht->array[counter];
 			tmp = ht->array[counter];
 
-			if (tmp->next)
+			if (tmp->next == NULL)
 			{
-				while (tmp->next)
+                printf("%s'%s': '%s'", coma, tmp->key, tmp->value);
+                coma = ", ";
+                counter++;
+            }
+            else
+            {
+			while (tmp->next)
 				{
+                    if (shamecounter == 0)
+                    {
 					printf("%s'%s': '%s'", coma, tmp->key, tmp->value);
+                    shamecounter++;
+                    }
+                    else
+                    {
 					tmp = tmp->next;
+                    printf("%s'%s': '%s'", coma, tmp->key, tmp->value);
+                    coma = ", ";
+                    }
 				}
-			}
-			else
-			{
-				printf("%s'%s': '%s'", coma, buffer->key, buffer->value);
-			}
-			counter++;
-			coma = ", ";
-		}
+                shamecounter = 0;
+                counter++;
+            }
+        }
 	}
 	printf("}\n");
 }
