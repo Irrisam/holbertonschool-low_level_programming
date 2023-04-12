@@ -28,12 +28,18 @@ void hash_table_print(const hash_table_t *ht)
 			buffer = ht->array[counter];
 			tmp = ht->array[counter];
 
-			while (tmp->next)
+			if (tmp->next)
 			{
-				tmp = tmp->next;
-				printf("%s'%s': '%s'", coma, tmp->key, tmp->value);
+				while (tmp->next)
+				{
+					printf("%s'%s': '%s'", coma, tmp->key, tmp->value);
+					tmp = tmp->next;
+				}
 			}
-			printf("%s'%s': '%s'", coma, buffer->key, buffer->value);
+			else
+			{
+				printf("%s'%s': '%s'", coma, buffer->key, buffer->value);
+			}
 			counter++;
 			coma = ", ";
 		}
