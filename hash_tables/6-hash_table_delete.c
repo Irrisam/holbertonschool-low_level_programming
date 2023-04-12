@@ -23,7 +23,7 @@ void hash_table_delete(hash_table_t *ht)
 	}
 
 	while (counter < ht->size)
-	{  
+	{
 		if (ht->array[counter])
 		{
 			tmp = ht->array[counter];
