@@ -18,15 +18,12 @@ void hash_table_delete(hash_table_t *ht)
 	}
 	if (ht->array == NULL)
 	{
-		free(ht->array);
 		free(ht);
 		return;
 	}
-	runner = ht->array[counter];
-	tmp = ht->array[counter];
 
-	while (counter <= ht->size)
-	{
+	while (counter < ht->size)
+	{  
 		if (ht->array[counter])
 		{
 			tmp = ht->array[counter];
@@ -35,9 +32,12 @@ void hash_table_delete(hash_table_t *ht)
 				runner = tmp->next;
 				free(tmp->value);
 				tmp->value = NULL;
+
 				free(tmp->key);
 				tmp->key = NULL;
+
 				free(tmp);
+
 				tmp = runner;
 
 			}
